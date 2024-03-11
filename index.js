@@ -4,7 +4,7 @@ const input = require("input");
 askStuff();
 
 async function askStuff() {
-    const name = await input.text('What is your search term?',{default:"spodnie"});
+    const name = await input.text('What is your search term?',{default:"trousers"});
 
     const pages = await input.text("How many pages to scan?",{default:10});
 
@@ -79,6 +79,9 @@ async function askStuff() {
                 await delay(5000);
     
                 const items = await collectData(page);
+                if(items.length==0) {
+                    break;
+                }
                 itemsList.push(...items);
             } else {
                 break;
