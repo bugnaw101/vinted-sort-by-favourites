@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <p>Requirments:</p>
-<p>Chrome browser installed</p>
+<p>Chrome browser installed (for puppeteer)</p>
 <p>npm</p>
 <p>node.js</p>
 <br/>
