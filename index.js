@@ -1,9 +1,9 @@
 const puppeteer = require("puppeteer");
 const input = require("input");
 
-askStuff();
+script();
 
-async function askStuff() {
+async function script() {
     const name = await input.text('What is your search term?',{default:"trousers"});
 
     const pages = await input.text("How many pages to scan?",{default:10});
