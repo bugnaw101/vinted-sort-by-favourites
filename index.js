@@ -51,7 +51,7 @@ async function askStuff() {
         await delay(1000);
 
         for(size in sizes) {
-            const el =(await page.$$("xpath/.//div[@data-testid='dropdown-content']//ul//h2[text()='"+sizes[size]+"']"))[0];
+            const el =(await page.$$("xpath/.//div[@data-testid='dropdown-content']//ul//span[text()='"+sizes[size]+"']"))[0];
             el.click();
         }
         
@@ -148,7 +148,7 @@ async function collectData(page) {
         var map = [];
         jQuery(".feed-grid__item").each(function(i) {
             var el = {};
-            el["likes"] = jQuery(this).find(".web_ui__Cell__suffix span:last").text();
+            el["likes"] = jQuery(this).find("button.new-item-box__favourite-icon span:last").text() == '' ? '0' : jQuery(this).find("button.new-item-box__favourite-icon span:last").text();
             el["src"] = jQuery(this).find("img:last").attr("src");
             el["price"] = jQuery(this).find(".title-content p").text();
             el["href"] = jQuery(this).find("a:last").attr("href");
